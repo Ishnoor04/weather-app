@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
+    <title>Weather App</title>
+</head>
+<body>
+    <main class="container">
+        <input list="cities" type="search" name="search" id="search" placeholder="Search City" autocomplete="off">
+        <datalist id="cities">
+            <!-- <option value=""></option> -->
+        </datalist>
+        <article id="current-forecast">
+            <h1 class="name">City Name</h1>
+            <p class="temp">Temp</p>
+            <p class="description">Description</p>   
+            <p class="high-low">H L</p>
+        </article>
+        <article id="hourly-forecast">
+            <h1>Hourly Forecast</h1>
+            <section class="hourly-container">
+                <!-- <article>
+                    <h2 class="time">Now</h2>
+                    <img class="icon" alt="">icon
+                    <p class="hourly-temp">temp</p>
+                </article>
+                <article>
+                    <h2>Now</h2>
+                    <img src="" alt="">icon
+                    <p>temp</p>
+                </article>
+                <article>
+                    <h2>Now</h2>
+                    <img src="" alt="">icon
+                    <p>temp</p>
+                </article> -->
+            </section>
+        </article>
+        <article id="fiveday-forecast">
+            <h1>5 Day Forecast</h1>
+            <section class="fiveday-forecast-container">
+                <!-- <article class="day-wise-forecast">
+                    <h3 class="day">Today</h3>
+                    <img src="" alt="">
+                    <p class="fiveday-low"> low</p>
+                    <p class="fiveday-high">high</p>
+                </article> -->
+            </section>
+        </article>
+        <article id="feels-like">
+            <h1>Feels Like</h1>
+            <p class="feels-like-temp">temp</p>
+        </article>
+        <article id="humidity">
+            <h1>Humidity</h1>
+            <p class="humidity-value">value</p>
+        </article>
+    </main>
+</body>
+</html>

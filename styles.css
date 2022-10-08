@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+:root{
+    --spacing-8 : 8px;
+    --spacing-16 : 16px;
+    --font-small : 0.5rem;
+    --font-regular : 1rem;
+    --font-large : 2rem;
+    --font-xl : 4rem;
+}
+
+
+body {
+    margin: auto;
+    max-width: 800px;
+    margin: var(--spacing-16) auto;
+}
+
+h1,h2,h3{
+    margin: 0;
+    text-transform: capitalize;
+}
+
+p{
+    margin: var(--spacing-8);
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: 
+    "search search"
+    "current current"
+    "hourly hourly"
+    "fiveday fiveday"
+    "feelslike humidity";
+    gap: var(--spacing-8);
+    padding: var(--spacing-16);
+}
+
+
+
+ .container>article {
+    border: 1px solid;
+    border-radius: var(--spacing-16);
+    gap: var(--spacing-8);
+    padding: var(--spacing-16);
+}
+
+#search{
+    grid-area: search ;
+    font-size: var(--font-regular);
+    border-radius: var(--font-regular);
+    padding: var(--spacing-8) ;
+}
+
+/* current-forecast */
+#current-forecast {
+    grid-area: current;
+    text-align: center;
+}
+
+#current-forecast .temp{
+    font-size: var(--font-xl);
+}
+#current-forecast .description {
+    text-transform: capitalize;
+}
+
+#current-forecast .description,#current-forecast .high-low{
+    font-size: var(--font-regular);
+    font-weight: 600;
+}
+
+/* hourly forecast */
+
+#hourly-forecast {
+    grid-area: hourly;
+    text-align: center;
+}
+
+#hourly-forecast .hourly-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px,1fr));
+    grid-auto-flow: column;
+    grid-auto-columns: minmax((100px,1fr));
+    overflow-x: auto;
+    /* margin: 10px; */
+    padding: 8px;
+
+}
+
+.hourly-container>article{
+    /* border: 1px solid;
+    border-radius: var(--spacing-8); */
+    gap: var(--spacing-8);
+}
+.hourly-container .time{
+    font-size: 1.2rem ;
+}
+.hourly-container .icon{
+    font-size: large;
+}
+.hourly-container .hourly-temp{
+    font-weight: 600;
+}
+
+/* fiveday-forecast */
+
+#fiveday-forecast{
+    grid-area: fiveday;
+    text-align: center;
+}
+
+#fiveday-forecast .fiveday-forecast-container{
+    display: grid;
+    grid-auto-flow: row;
+}
+
+.fiveday-forecast-container .day-wise-forecast{
+    display: grid;
+    grid-template: auto / repeat(4,1fr);
+    place-items: center;
+    gap: var(--spacing-8);
+}
+.fiveday-forecast-container .day-wise-forecast .fiveday-low{
+    opacity: 0.7;
+    font-weight: 500;
+}
+.fiveday-forecast-container .day-wise-forecast .fiveday-high{
+    font-weight: 500;
+    justify-self: end;
+}
+.fiveday-forecast-container .day-wise-forecast .day{
+    font-weight: 500;
+    justify-self: start;
+}
+#feels-like{
+    grid-area: feelslike;
+    text-align: center;
+}
+
+#humidity {
+    grid-area: humidity;
+    text-align: center;
+}
+
+@media (width>=650px){
+    .container{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-areas: 
+        "search search search search"
+        "current current current current"
+        "hourly hourly fiveday fiveday"
+        "feelslike humidity fiveday fiveday";
+    }   
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+      background-color: black;
+      color: white;
+    }
+    #search {
+        background-color: rgb(182, 180, 180);
+        color: white;
+    }
+   
+  }
